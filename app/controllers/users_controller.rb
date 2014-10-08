@@ -51,6 +51,19 @@ class UsersController < ApplicationController
       render edit_user_path(@user)
     end
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      session[:user_id] = nil
+      flash[:notice] = "We're sorry to see you go. Your account has been deleted."
+      redirect_to root_path
+    else
+      flash[:alert] = "There was a problem deleting your account."
+      redirect_to users_path
+    end
+
+  end
   
   private
 
