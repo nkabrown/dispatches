@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new
 		if @post.save
-			flash[:notice] = "You've become one of our new dispachers!"
+			flash[:notice] = "You've posted a new dispatch!"
 			redirect_to @post
 		else
 			flash[:alert] = "There was a problem signing you up. Try again"
