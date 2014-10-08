@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
+		@users = User.all
 		# set_post
 		@user = session[:user_id]
 	end
