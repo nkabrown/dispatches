@@ -7,6 +7,8 @@
   <% end %>
 </ol>
 
+<%= link_to "Edit your account", edit_user_path(@user) %>
+
 <%= link_to "Sign-Out", session_path(@user), method: :delete %>
 
 
