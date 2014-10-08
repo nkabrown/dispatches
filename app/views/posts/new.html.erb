@@ -1,0 +1,7 @@
+<h1> Upload a post! </h1>
+
+<%= form_for @post |f| %>
+	<%= f.label :body %>
+	<%= f.text_field :body %>
+	<%= f.submit :create %>
+<%end%>
