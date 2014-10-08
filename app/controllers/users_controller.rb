@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
 
-<<<<<<< HEAD
-	def index
-
-	end
-=======
   def index
 
   end
@@ -33,6 +28,6 @@ class UsersController < ApplicationController
   def user_params
     params.required(:user).permit(:fname, :lname, :email, :username, :password)
   end
->>>>>>> 3b18d6fbdb9fc17ce87fd080485c60e762ed8650
+
 
 end

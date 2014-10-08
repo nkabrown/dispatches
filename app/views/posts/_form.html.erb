@@ -1,2 +1,5 @@
-<h1> Form for post data </h1>
 
+<%= form_for @post do |f|  %>
+	<%= f.text_area :body %>
+	<%= f.submit :Post! %>
+<%end%>
