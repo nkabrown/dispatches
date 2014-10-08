@@ -1,8 +1,11 @@
 <h1>NEWSROOM</h1>
 <p>Dispatches are coming in and Dispatches are going out.</p>
 
-<%= link_to "Your Desk", user_path(@user) %>
-
+<ol>
+  <% @users.each do |user| %>
+    <li><%= link_to user.fname + "'s Desk", user %></li>
+  <% end %>
+</ol>
 
 <%= link_to "Sign-Out", session_path(@user), method: :delete %>
 

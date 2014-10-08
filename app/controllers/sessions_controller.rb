@@ -9,14 +9,13 @@ class SessionsController < ApplicationController
     if @user && @user.password == params[:password]
       flash[:notice] = "Welcome to the Newsroom."
       session[:user_id] = @user.id
-      flash[:notice] = "Logged in!"
       redirect_to users_path
       puts "**********"
       puts session[:user_id]
       puts "**********"
     else
       flash[:alert] = "There was a problem signing you in. Please try again."
-      render :new
+      render new_session_path
     end
   end
 
