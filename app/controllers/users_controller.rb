@@ -32,4 +32,5 @@ class UsersController < ApplicationController
     params.required(:user).permit(:fname, :lname, :email, :username, :password)
   end
 
+
 end
