@@ -1,3 +1,7 @@
 <h1> Post a dispatch! </h1>
 
 <%= render 'form' %>
+
+<%= link_to "Cancel", users_path %>   <!-- Gotta double check if we need to use this path -->
+<%= link_to "Sign-Out", session_path(@user), method: :delete %>
+
