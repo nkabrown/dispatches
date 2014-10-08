@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :sessions, only: [:new, :create, :destroy]
+  
   # You can have the root of your site routed with "root"
   root 'home#index'
 
