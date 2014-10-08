@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new
+		@post = Post.new(post_params)
 		if @post.save
 			flash[:notice] = "You've posted a new dispatch!"
 			redirect_to @post
