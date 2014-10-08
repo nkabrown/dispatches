@@ -1,6 +1,12 @@
 <h1> Here are all of your posts </h1>
 <p><%= "by " + @user.fname %></p>
 
+<ul>
+		<!-- Post.where(user_id:12) -->
+		<% @users.where(:id).each do |post| %>
+			<li><%= post.body %></li>
+		<%end%>
+</ul>
 
- 
-<p><%= link_to "Back to the Newsroom", users_path %></p>
+<p> <%= link_to "Back to the Newsroom", users_path %> </p>
+<p> <%= link_to "Sign-Out", session_path(@user), method: :delete %> </p>
