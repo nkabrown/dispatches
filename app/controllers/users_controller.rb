@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    @user = session[:user_id]
+    @user = User.find(session[:user_id])
+    puts "*********"
+    puts params
+    puts "*********"
   end
 
   def new 
@@ -23,6 +26,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = session[:user_id]
+  end
+
+  def edit 
     @user = session[:user_id]
   end
   

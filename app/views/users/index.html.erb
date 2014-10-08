@@ -1,2 +1,8 @@
 <h1>NEWSROOM</h1>
 <p>Dispatches are coming in and Dispatches are going out.</p>
+
+<%= link_to "Your Desk", user_path(@user) %>
+
+
+<%= link_to "Sign-Out", session_path(@user), method: :delete %>
+
