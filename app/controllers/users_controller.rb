@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-
+    @user = session[:user_id]
   end
 
   def new 
@@ -20,9 +20,12 @@ class UsersController < ApplicationController
       flash[:alert] = "We had a problem signing you in."
       render :new
     end
-
   end
 
+  def show
+    @user = session[:user_id]
+  end
+  
   private
 
   def user_params
