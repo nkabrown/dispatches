@@ -1,6 +1,6 @@
 <h1> Here are all of your posts </h1>
-<p> by  </p>
-<!-- @post.user.fname -->
+<p><%= "by " + @user.fname %></p>
 
 
-<p> <%link_to "Back to the Newsroom", users_path %> </p>
+ 
+<p><%= link_to "Back to the Newsroom", users_path %></p>

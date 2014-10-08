@@ -7,11 +7,4 @@
   <% end %>
 </ol>
 
-<%= link_to "Edit your account", edit_user_path(@user) %> |
-
-<%= link_to "Sign-Out", session_path(@user), method: :delete %> |
-
-
-<%= link_to " Post a dispatch. ", new_post_path %> <!-- temporary link -->
-
-<p><%= link_to "Delete Your Account", user_path(@user), method: :delete %></p>
+<p><%= link_to "Your Desk", posts_path %></p>

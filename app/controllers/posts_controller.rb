@@ -4,21 +4,21 @@ class PostsController < ApplicationController
 
 	def index 
 		@posts = Post.all
-		@user = session[:user_id]
+		@user = User.find(current_user.id)
 	end
 
 	def show
 		# set_post
-		@user = session[:user_id]
+		@user = User.find(current_user.id)
 	end
 
 	def new
 		@post = Post.new
-		@user = session[:user_id]
+		@user = User.find(current_user.id)
 	end
 
 	def create
-		@user = session[:user_id]
+		@user = User.find(current_user.id)
 		@post = Post.new(post_params)
 		if @post.save
 			flash[:notice] = "You've posted a new dispatch!"
@@ -31,13 +31,13 @@ class PostsController < ApplicationController
 
 	def edit
 		# set_post
-		@user = session[:user_id]
+		@user = User.find(current_user.id)
 	end
 
 	def update
-		@user = session[:user_id]
+		@user = User.find(current_user.id)
 		if @post.update(post_params)
-			flash[:notice] = "Your dispactch has been updated."
+			flash[:notice] = "Your dispatch has been updated."
 			redirect_to @post
 		else
 			flash[:alert] = "There was a problem with your edit, please try again."
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		@user = session[:user_id]
+		@user = User.find(current_user.id)
 		if @post.destroy
 			flash[:notice] = "Your post has been deleted from the feed."
 			redirect_to users_path
