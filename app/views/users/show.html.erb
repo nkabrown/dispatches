@@ -1,7 +1,7 @@
-<h1><%= @user.fname + "'s Desk" %></h1>
+<h1><%= @user.fname + "'s Desk Drawer" %></h1>
 <p>Dispatches</p>
 <ul>
-    <% @user.posts.each do |post| %>
+    <% @user.posts.each do |post| %>   
     	<li>
       		<%= post.title %>
       		<%= post.body %>

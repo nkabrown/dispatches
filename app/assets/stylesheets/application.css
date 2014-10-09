@@ -15,18 +15,52 @@
  */
 
 body {
+  width: 1000px;
+  margin: 0 auto;
   font-family: 'American Typewriter', serif;
+  color: #000;
   background-color:rgb(209, 245, 252);
   /*background: linear-gradient(to right, #D1F5FC, rgb(235,116,110));*/
-  background-image: url("../images/newsroom.jpg");
-  /*background-image: url(image-path('newsroom.jpg'));*/
   background-size: 100%;
   background-attachment: fixed;
   background-position: center;
 }
 
+h1 {
+  font-size: 3em;
+  font-weight: 200;
+}
+
 a {
-  color: #439005;
+  color: #FF1493;
+}
+
+#home-page {
+  background-image: url("/assets/newsroom.jpg");
+}
+
+#home-layout {
+  width: 900px;
+  min-height: 768px;
+  margin-top: -70px;
+  background-color: rgba(255, 255, 255, .6);
+}
+#home-layout h1 {
+  text-align: center;
+  font-size: 6em;
+  font-weight: 200;
+  color: #FF1493;
+  text-decoration: underline;
+  margin-bottom: 0px;
+}
+
+#home-layout p {
+  text-align: center;
+  color: #FF1493;
+}
+
+#home-login a {
+ text-align: center;
 }
 
 #post_title:focus {
