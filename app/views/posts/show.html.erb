@@ -8,6 +8,13 @@
 			<li>
 				<%= post.title %><br>
 				<%= post.body %><br>
+			<!-- if there is a comment for a post - post it here -->
+			<!-- if there is a comment for the Post_id, Output it here --> 
+					<% post.comments.each do |comment| %>
+						<%= comment.body %> <%= comment.id %>
+						<br>
+					<% end %>
+
         	<div class="post-link">	
             <%= link_to "Comment", new_post_comment_path(post) %> |
             <%= link_to "Edit", edit_post_path(post) %> |
