@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(current_user.id)
+    #@post = Post.find(params[:id])
+    @post = Post.where(current_user.id)
     puts "********"
     puts params
     puts "********"
