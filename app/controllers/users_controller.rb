@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     puts "********"
     puts params
     puts "********"
+    @posts = User.find(params[:id]).posts
   end
 
   def new 
