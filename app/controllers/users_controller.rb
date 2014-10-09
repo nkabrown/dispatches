@@ -70,9 +70,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:fname, :lname, :email, :username, :password)
   end
 
-  # def set_user
-  #   @user = User.find(params[:id]) 
-  # end
+  def set_user
+    @user = User.find(params[:id])
+    # @user = User.find(session[:user_id]) 
+  end
 
 
 end
