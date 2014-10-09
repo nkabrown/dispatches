@@ -38,7 +38,6 @@ a {
 
 .comment {
   font-size: 10px;
-  margin-left: 20px;
 }
 
 /***********************************************
@@ -62,15 +61,18 @@ a {
   color: #FF1493;
   text-decoration: underline;
   margin-bottom: 0px;
+  padding-top: 150px;
 }
 
 #home-layout p {
   text-align: center;
   color: #FF1493;
+  padding-bottom: 50px;
 }
 
 #home-login a {
- text-align: center;
+ font-size: 2em;
+ margin-left: 400px;
 }
 
 /****************************************
