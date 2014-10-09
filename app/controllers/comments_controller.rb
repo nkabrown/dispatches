@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
 	before_action :set_comment, only: [:edit, :update, :destroy]
 
+	def new
+
+	end
+
 	def create
 		@comment = Comment.new(comment_params)
 		if @comment.save
