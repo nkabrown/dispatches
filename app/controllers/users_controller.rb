@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     puts "********"
     puts params
     puts "********"
-    @posts = User.find(params[:id]).posts
   end
 
   def new 
@@ -75,7 +74,6 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    # @user = User.find(session[:user_id]) 
   end
 
 
