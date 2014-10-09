@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @posts = Post.all
+    @user = User.find(current_user.id)
     puts "*********"
     puts params
     puts "*********"

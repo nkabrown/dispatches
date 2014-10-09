@@ -1,11 +1,21 @@
 <h1>NEWSROOM</h1>
 <p>Dispatches are coming in and going out.</p>
 
-<p><%= link_to "Your Desk", posts_path %></p>
+<div id="user_desks">
+ <p><%= link_to "Your Desk", posts_path %></p>
+  <ol>
+    <% @users.each do |user| %>
+       <li><%= link_to user.fname + "'s Desk", user %></li>
+    <% end %>
+  </ol>
+</div>
 
-<ol>
-  <% @users.each do |user| %>
-      <li><%= link_to user.fname + "'s Desk", user %></li>
-  <% end %>
-</ol>
+<div id="feed">
+  <h2>Ticker Tape</h2>
+    <ul>
+        <% @posts.last(10).each do |post| %>
+          <li><%= post.user_id %><br><%= post.title %><br><%= post.body %></li>
+        <% end %>
+    </ul>
+</div>
 

@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 	before_action :set_comment, only: [:edit, :update, :destroy]
 
-	def new
+	def index
 
 	end
 
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comments_params
-		params.require(:comment).permit()
+		params.require(:comment).permit(:body)
 	end
 
 	def set_comment
