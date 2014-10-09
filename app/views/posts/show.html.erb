@@ -3,7 +3,7 @@
 
 <ul>
 		<!-- Post.where(user_id:12) -->
-		<% @users.where(:id).each do |post| %>
+		<% @user.each do |post| %>
 			<li><%= post.body %></li>
 		<%end%>
 	
