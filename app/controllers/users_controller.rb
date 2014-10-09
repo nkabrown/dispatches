@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where(current_user.id)
     puts "********"
     puts params
     puts "********"
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
     puts "*********"
     if @user.save
       flash[:notice] = "Thank you for signing up. Now send your dispatches out into the world."
+      session[:user_id] = @user.id
       redirect_to users_path
     else
       flash[:alert] = "We had a problem signing you in."

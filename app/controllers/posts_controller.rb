@@ -32,8 +32,8 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		# set_post
 		@user = User.find(current_user.id)
+		set_post
 	end
 
 	def update

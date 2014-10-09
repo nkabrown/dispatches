@@ -1,11 +1,11 @@
 <h1><%= @user.fname + "’s Desk" %></h1>
 
-<%= link_to "Edit your account", edit_user_path(@user) %> |
 <%= link_to " Post a dispatch. ", new_post_path %> |
+<%= link_to "Edit your account", edit_user_path(@user) %> |
 <%= link_to "Return to Newsroom", users_path %> |
-<%= link_to "Sign-Out", session_path(@user), method: :delete %> 
+<%= link_to "Sign-Out", session_path(@user), method: :delete %><br> 
 
-
+<%= link_to "Your Dispatches", user_path(@user) %>
  
 
 <p><%= link_to "Delete Your Account", user_path(@user), method: :delete %></p>
