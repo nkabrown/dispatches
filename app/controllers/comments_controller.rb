@@ -1,29 +1,19 @@
 class CommentsController < ApplicationController
 	before_action :set_comment, only: [:edit, :update, :destroy]
 
-	def index
-		@comment = Comment.all
-	end
-
 	def new
 		@comment = Comment.new
 		@post = Post.find(params[:post_id])
-		#@user = User.find(current_user.id)
 	end
 
 	def create  
-		@user = User.find(current_user.id)
-		@post = Post.find(params[:post_id])
-		#@post = Post.find(params[:id]) 
-		#@user = User.find(current_user.id)
-
 		@comment = Comment.new(comments_params)
 		@comment.body = comments_params[:body]
 		@comment.post.id = Post.find(params[:post_id])
 		@comment.user_id = current_user.id
 		if @comment.save
 			flash[:notice] = "You've commented on that dispatch"
-			redirect_to post_comments_path([:post_id])
+			redirect_to users_path
 		else
 			flash[:alert] = "There was a problem generating your comment."
 			render :new

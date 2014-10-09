@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :users 
   resources :posts do
-    resources :comments, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :comments, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :sessions, only: [:new, :create, :destroy]
