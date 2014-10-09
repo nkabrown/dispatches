@@ -1,2 +1,11 @@
-<h1> Welcome to the Post Page </h1>
-<p> Users will be fed here for ... </p>
+<h1><%= @user.fname + "’s Desk" %></h1>
+
+<%= link_to "Edit your account", edit_user_path(@user) %> |
+
+<%= link_to "Sign-Out", session_path(@user), method: :delete %> |
+
+
+<%= link_to " Post a dispatch. ", new_post_path %> 
+
+<p><%= link_to "Delete Your Account", user_path(@user), method: :delete %></p>
+
