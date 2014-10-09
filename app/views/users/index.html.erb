@@ -1,5 +1,7 @@
 <h1>NEWSROOM</h1>
-<p>Dispatches are coming in and Dispatches are going out.</p>
+<p>Dispatches are coming in and going out.</p>
+
+<p><%= link_to "Your Desk", posts_path %></p>
 
 <ol>
   <% @users.each do |user| %>
@@ -7,4 +9,3 @@
   <% end %>
 </ol>
 
-<p><%= link_to "Your Desk", posts_path %></p>

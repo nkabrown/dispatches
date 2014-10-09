@@ -14,3 +14,23 @@
  *= require_self
  */
 
+body {
+  font-family: 'American Typewriter', serif;
+}
+
+a {
+  color: #000;
+}
+
+#post_title:focus {
+  outline: none;
+}
+
+#post_body {
+  width: 350px;
+  height: 275px;
+}
+
+#post_body:focus {
+  outline: none;
+}

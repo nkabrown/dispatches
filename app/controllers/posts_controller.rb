@@ -9,8 +9,9 @@ class PostsController < ApplicationController
 
 	def show
 		@users = User.all
-		# set_post
+		#set_post
 		@user = User.find(current_user.id)
+		@posts = Post.where(current_user.id)
 	end
 
 	def new
