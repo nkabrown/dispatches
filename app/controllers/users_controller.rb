@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -9,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     #@post = Post.find(params[:id])
     @post = Post.where(current_user.id)
     puts "********"
@@ -37,14 +37,12 @@ class UsersController < ApplicationController
   end
 
   def edit 
-    @user = User.find(params[:id])
     puts "********"
     puts params
     puts "********"
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "You've updated your account."
       redirect_to users_path
@@ -55,7 +53,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     if @user.destroy
       session[:user_id] = nil
       flash[:notice] = "We're sorry to see you go. Your account has been deleted."

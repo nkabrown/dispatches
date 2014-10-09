@@ -1,13 +1,36 @@
 <%= form_for @user do |f| %>
+  <div class="form_Label">
   <%= f.label :fname, "First Name" %>
+  </div>
+  <div class="form_Field">
   <%= f.text_field :fname %>
+  </div>
+  <div class="form_Label">
   <%= f.label :lname, "Last Name" %>
+  </div>
+  <div class="form_Field">
   <%= f.text_field :lname %>
+  </div>
+  <div class="form_Label">
   <%= f.label :email %>
+  </div>
+  <div class="form_Field">
   <%= f.text_field :email %>
+  </div>
+  <div class="form_Label">
   <%= f.label :username %>
+  </div>
+  <div class="form_Field">
   <%= f.text_field :username %>
+  </div>
+  <div class="form_Label">
   <%= f.label :password %>
+  </div>
+  <div class="form_Field">
   <%= f.password_field :password %> 
+  </div>
+  <div class="form_Label">
   <%= f.submit %>
+  </div>
+
 <% end %>
