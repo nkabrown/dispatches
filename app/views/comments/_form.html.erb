@@ -1,0 +1,16 @@
+<h1> Add your comment here for the current post: </h1>
+
+<%= form_for @post do |f| %> <!--  note to self - test this - should be current logged in user -->
+
+  <div class="form_Label_Comment">
+  <%= f.label :comment, "Comment" %>
+  </div>
+  <div class="form_Field_Comment">
+  <%= f.text_area :comment %>
+  </div>
+
+  <div class="form_Label_Comment">
+  <%= f.submit %>
+  </div>
+
+<% end %>
