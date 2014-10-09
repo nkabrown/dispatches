@@ -2,7 +2,10 @@ class CommentsController < ApplicationController
 	before_action :set_comment, only: [:edit, :update, :destroy]
 
 	def index 
-		@comment = Comment.all
+		@users = User.all
+		@posts = Post.all
+		@user = User.find(current_user.id)
+		@comments = Comment.all
 		@post = Post.find(params[:post_id])
 	end
 
@@ -17,12 +20,12 @@ class CommentsController < ApplicationController
 
 	def create  
 		@user = User.find(current_user.id)
-		#@post = Post.find(params[:id])
-  		#@comment = @commentable.comments.build(params[:comment]) 
+		@post = Post.find(params[:post_id])
+		#@post = Post.find(params[:id]) 
 		@comment = Comment.new(comments_params)
 		if @comment.save
 			flash[:notice] = "You've commented on that dispatch"
-			redirect_to post_comments_path 
+			redirect_to post_comments_path
 		else
 			flash[:alert] = "There was a problem generating your comment."
 			render :new

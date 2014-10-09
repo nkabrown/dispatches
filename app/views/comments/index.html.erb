@@ -1,8 +1,18 @@
 <h1> Comments to the current post. </h1>
 
-<% @comment.each do|comment| %>
-<%= comment.body %> <%= comment.id %>
-<br>
+
+<!-- @comment array , do comment (I actually only need 1, the last one.) 
+I need to post it under the current post it comes from --> 
+
+<ol>
+<% @comments.each do |comment| %>
+		
+		<% if @user == @post %>
+	<li><%= comment.body %>  associated with dispatch: <%= @post.title %> by <%= @user.fname %></li>
+	<%end%>
+	
+	<br>
 <% end %>
+</ol>
 
 <%= link_to "Back to the Newsroom", users_path %>
