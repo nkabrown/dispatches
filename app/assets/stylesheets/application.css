@@ -16,6 +16,13 @@
 
 body {
   font-family: 'American Typewriter', serif;
+  background-color:rgb(209, 245, 252);
+  /*background: linear-gradient(to right, #D1F5FC, rgb(235,116,110));*/
+  background-image: url("../images/newsroom.jpg");
+  /*background-image: url(image-path('newsroom.jpg'));*/
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 a {

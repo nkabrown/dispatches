@@ -49,12 +49,13 @@ class PostsController < ApplicationController
 
 	def destroy
 		@user = User.find(current_user.id)
+		#@post = Post.where(current_user.id)
 		if @post.destroy
 			flash[:notice] = "Your post has been deleted from the feed."
-			redirect_to users_path
+			redirect_to posts_path
 		else
 			flash[:alert] = "There was a problem deleting your post."
-			redirect_to users_path
+			redirect_to posts_path
 		end
 	end
 
