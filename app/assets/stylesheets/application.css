@@ -64,6 +64,10 @@ a {
  text-align: center;
 }
 
+.post-link {
+  font-size: 10px;
+}
+
 #post_title:focus {
   outline: none;
 }

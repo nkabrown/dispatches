@@ -1,1 +1,7 @@
 <h1> Comments to the current post. </h1>
+
+<% @comment.each do|comment| %>
+<%= comment.body %> <%= comment.id %>
+<br>
+<% end %>
+
