@@ -90,6 +90,10 @@ a {
 ****************NEWSROOM******************
 *****************************************/
 
+#user_index {
+background-image: url("/assets/paper.jpg");
+}
+
 #user_desks {
   width: 450px;
   float:left;
@@ -129,3 +133,13 @@ a {
 #post_body:focus {
   outline: none;
 }
+
+
+/***************Post Index *********************/
+
+body {
+background-image: url("/assets/paper.jpg");
+}
+
+
+
