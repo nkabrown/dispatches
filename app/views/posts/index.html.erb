@@ -2,14 +2,16 @@
 
 	<h1><%= @user.fname + "’s Desk" %></h1>
 
-	<h2>Use this space to edit your account information or dispatch another post </h2>
+<%= image_tag @user.avatar.url(:thumb) %><br>
+<hr>
 
-	<%= link_to " Post a dispatch. ", new_post_path %> |
-	<%= link_to "Edit your account", edit_user_path(@user) %> |
-	<%= link_to "Return to Newsroom", users_path %> |
-	<%= link_to "Sign-Out", session_path(@user), method: :delete %><br> 
-	</br>
-	<%= link_to "Your Dispatches", user_path(@user) %>
+<%= link_to " Post a dispatch. ", new_post_path %> |
+<%= link_to "Edit your account", edit_user_path(@user) %> |
+<%= link_to "Return to Newsroom", users_path %> |
+<%= link_to "Sign-Out", session_path(@user), method: :delete %><br> 
+</br>
+<%= link_to "Your Dispatches", user_path(@user) %>
+
  
 
 	<p><%= link_to "Delete Your Account", user_path(@user), method: :delete %></p>

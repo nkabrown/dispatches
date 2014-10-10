@@ -26,9 +26,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    puts "*********"
-    puts params
-    puts "*********"
     if @user.save
       flash[:notice] = "Thank you for signing up. Now send your dispatches out into the world."
       session[:user_id] = @user.id
@@ -70,7 +67,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:fname, :lname, :email, :username, :password)
+    params.require(:user).permit(:fname, :lname, :email, :username, :password, :avatar)
   end
 
   def set_user
