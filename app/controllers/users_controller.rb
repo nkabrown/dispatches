@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @users = User.all
     @posts = Post.all
     @user = User.find(current_user.id)
+    #@usery = User.find(:id)
     puts "*********"
     puts params
     puts "*********"
