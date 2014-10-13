@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
-	#before_action :set_comment, only: [:edit, :update, :destroy]
-
+	
 	def new
 		@comment = Comment.new
 		@post = Post.find(params[:post_id])
@@ -18,18 +17,6 @@ class CommentsController < ApplicationController
 		end
 	end
 
-	def edit
-
-	end
-
-	def update
-		if @comment.update(comment_params)
-			flash[:notice] = "You've updated your comment."
-		else
-			flash[:alert] = "There was a problem updating your comment."
-		end
-	end
-
 	def destroy
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.find(params[:id])
@@ -42,9 +29,5 @@ class CommentsController < ApplicationController
 	def comment_params
 		params.require(:comment).permit(:body)
 	end
-
-	# def set_comment
-	# 	@comment = Comment.find(params[:id])
-	# end
 
 end

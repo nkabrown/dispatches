@@ -16,7 +16,7 @@
 	  <h2>Ticker Tape</h2>
 	    <ul>
 	        <% @posts.last(10).each do |post| %>
-	          <li><%= post.user_id %><br><%= post.title %><br><%= post.body %><br>
+	          <li><%= post.user.fname %><br><%= post.title %><br><%= post.body %><br>
 	          <% post.comments.each do |comment| %>
 	            <% if comment.post.id == post.id %>
 	              <span class="comment"><%= comment.body %></span>
