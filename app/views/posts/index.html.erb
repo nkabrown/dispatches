@@ -16,6 +16,16 @@
       <li>
           <%= post.title %><br>
           <%= post.body %><br>
+          <% post.comments.each do |comment| %>
+          <ul>  
+            <% if comment.post.id == post.id %>
+              <span class="comment"><li><%= comment.body %></li></span>
+            <% else %>
+            
+            <% end %>
+          </ul>
+          </li>
+          <% end %>
           <div class="post-link"> 
             <%= link_to "Comment", new_post_comment_path(post) %> |   
             <%= link_to "Edit", edit_post_path(post) %> |
