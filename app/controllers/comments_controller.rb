@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	before_action :set_comment, only: [:edit, :update, :destroy]
+	#before_action :set_comment, only: [:edit, :update, :destroy]
 
 	def new
 		@comment = Comment.new
@@ -7,10 +7,8 @@ class CommentsController < ApplicationController
 	end
 
 	def create  
-		@comment = Comment.new(comments_params)
-		@comment.body = comments_params[:body]
-		@comment.post.id = Post.find(params[:post_id])
-		@comment.user_id = current_user.id
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.create(comment_params)
 		if @comment.save
 			flash[:notice] = "You've commented on that dispatch"
 			redirect_to users_path
@@ -33,18 +31,20 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.find(params[:id])
 		@comment.destroy
-		redirect_to 
+		redirect_to post_path(@post)
 	end
 
 	private
 
-	def comments_params
-		params.require(:comment).permit(:body).merge(post_id: current_user.id)
+	def comment_params
+		params.require(:comment).permit(:body)
 	end
 
-	def set_comment
-		@comment = Comment.find(params[:id])
-	end
+	# def set_comment
+	# 	@comment = Comment.find(params[:id])
+	# end
 
 end
