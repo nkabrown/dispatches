@@ -10,9 +10,22 @@
 <%= link_to "Return to Newsroom", users_path %> |
 <%= link_to "Sign-Out", session_path(@user), method: :delete %><br> 
 </br>
-<%= link_to "Your Dispatches", user_path(@user) %>
 
+<ul>
+    <% @user.posts.each do |post| %>   
+      <li>
+          <%= post.title %><br>
+          <%= post.body %><br>
+          <div class="post-link"> 
+            <%= link_to "Comment", new_post_comment_path(post) %> |   
+            <%= link_to "Edit", edit_post_path(post) %> |
+            <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Confirm you want to delete."} %>
+          </div>
+      </li>
+    <%end%>
+</ul>
  
+
 
 	<p><%= link_to "Delete Your Account", user_path(@user), method: :delete %></p>
 
