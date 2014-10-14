@@ -19,7 +19,7 @@ body {
   margin: 0 auto;
   font-family: 'American Typewriter', serif;
   color: #000;
-  background-color:rgb(209, 245, 252);
+  background-color:rgb(245, 249, 250);
   /*background: linear-gradient(to right, #D1F5FC, rgb(235,116,110));*/
   background-size: 100%;
   background-attachment: fixed;
@@ -30,6 +30,7 @@ body {
 h1 {
   font-size: 3em;
   font-weight: 200;
+  text-decoration: underline;
 }
 
 a {
@@ -37,12 +38,13 @@ a {
 }
 
 .comment {
-  font-size: 10px;
+  font-size: .8em;
 }
 
 .comment li {
-  list-style-type: none;
+  list-style-type: circle;
   margin-left: 20px;
+  padding-bottom: 10px;
 }
 
 /***********************************************
@@ -110,7 +112,7 @@ background-image: url("/assets/paper.jpg");
 }
 
 #feed h2 {
-  font-weight: 200;
+  font-weight: 400;
   text-decoration: underline;
 }
 /*****************************************
